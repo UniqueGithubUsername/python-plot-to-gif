@@ -11,7 +11,7 @@ def makeframes(data_name, folder_name):
     for i in range(len(df['data'])):
         df['data'] = df2['data']
         df['data'][i+1:] = 0 
-        plot = df.plot(y='data', ylim=(0,1.1*max(df2['data'])), rot=0)
+        plot = df.plot.bar(y='data', ylim=(0,1.1*max(df2['data'])), rot=0)
         fig = plot.get_figure()
         fig.savefig(folder_name + "/frame-"+str(i)+".png")
         print("Saved frame" + folder_name + "/frame-" + str(i) + ".png")
